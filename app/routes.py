@@ -4,6 +4,32 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
+from flask_sqlalchemy import SQLAlchemy
+import requests
+
+
+## weather
+
+@app.route('/weather')
+def weather():
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=b2a0213d9b0e1e919447e7ea59b2450d'
+    city = 'Vienna'
+
+    r = requests.get(url.format(city)).json() #response
+
+    weather = {
+        'city' : city,
+        'temperature' : r['main']['temp'],
+        'description' : r['weather'][0]['description'],
+        'icon' : r['weather'][0]['icon'],
+    }
+
+    print(weather)
+
+
+    return render_template('weather.html', weather=weather)
+
+## end weather
 
 
 @app.route('/')
