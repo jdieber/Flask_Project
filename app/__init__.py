@@ -1,4 +1,3 @@
-
 from flask import Flask
 from config import Config #import from the module config.py
 from flask_sqlalchemy import SQLAlchemy

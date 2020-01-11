@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework2 ">
+    <meta name="keywords" content="HTML,CSS">
+    <meta name="author" content="Jürgen Dieber">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/MainStylesheet.css">
+    <title>Homepage</title>
+
+  </head>
+
+
+<body>
+
+<div class="navbar">
+        <a href="#">Main Page</a>
+        <a href="#">About</a>
+        <a href="#">Team</a>
+        <a style="float:right;color:black;" class="logout" href="NewLogin.html">Logout</a>
+</div>
+
+
+<div class="header">
+  <h2>The 12% Genius</h2>
+</div>
+
+<div class="subheader">
+<h3> This page is about Young Talents! </h3>
+  <p> About 12 percent of the world are in their teens. If you like to go to school, play video games or play in the park it’s ok.
+    This blog is about shedding light on those who’s passion includes something that contributes to our society, being it academic, entrepreneurial or social. </p>
+
+</div>
+
+
+  <div class="column">
+
+
+  <div class="smallcolumn">
+
+
+<div class="card">
+    <div class="form">
+      <h3>Are you a young Talent?</h3>
+
+      <label for="YesG"> Yes </label>
+      <input id="YesG" type="radio" name="loc" value="">
+
+      <label for="NoG"> No </label>
+      <input id="NoG" type="radio" name="loc" value="">
+
+
+      <p>If you are working on something remarkable and want to be interviewed
+        for the site fill out that form and I will get in touch with you soon. </p>
+
+      <form name=”contact_form” action=”contact-form-handler.php”> <br>
+        Your Name:      <input name=”name”> <br>
+        Email Address:  <input name=”email”> <br>
+        Message: <br>        <textarea name=”message”></textarea> <br>
+                        <input type="submit" name="Submit" value="Submit">
+
+      </form>
+
+
+    </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="footer">
+  <footer>    <!-- Fußzeile -->
+    <hr>
+    <p> Terms & Policies | Contact </p>
+    <a href ="https://www.linkedin.com/in/juergen-dieber/"> Design j.w.dieber</a>
+  </footer>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
