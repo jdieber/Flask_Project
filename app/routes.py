@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 import requests
 
 
-## weather
+## weather https://www.youtube.com/watch?v=lWA0GgUN8kg
 
 @app.route('/weather')
 def weather():
@@ -98,7 +98,14 @@ def charts():
             'body': 'DAX down by 3% this morning'
         }
     ]
-    return render_template('charts.html', title='Charts', posts=posts)
+    bar =   [ #moving news bar  
+        {
+            'body': 'Brand new News'
+
+        }
+
+    ]
+    return render_template('charts.html', title='Charts', posts=posts, bar=bar)
 
 @app.route('/content')
 def content():
