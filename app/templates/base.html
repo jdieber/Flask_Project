@@ -1,24 +1,16 @@
 <html>
     <head>
         {% if title %}
-        <title>{{ title }} - Microblog</title>
+        <title>{{ title }} my webpage</title>
         {% else %}
-        <title>Welcome to Microblog</title>
+        <title>my webpage</title>
         {% endif %}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css.css') }}">
     </head>
-    {% block navbar %}
-
-          <div class="navbar-header">
-            Microblog:
+    <body>
+        <div class="topnav">
             <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('charts') }}">Charts</a>
-            {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            {% else %}
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {% endif %}
         </div>
-    {% endblock %}
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
