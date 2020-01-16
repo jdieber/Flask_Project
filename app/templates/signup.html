@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="topnav">
+      <a href="/login">Login</a>
+      <a href="/index">Main Page</a>
+  </div>
+
+
+    <main>
+        <form class="container" method="post" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="imgcontainer">
+                <img src="{{ url_for('static', filename='images/user_avatar.png') }}" alt="Avatar" class="avatar">
+
+            <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+
+            <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+
+            <p>
+            {{ form.test_password.label }}<br>
+            {{ form.test_password(size=32) }}
+            {% for error in form.test_password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+
+            <p>{{ form.submit() }}</p>
+            {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            <a href="/login"> Take me back to login </a><br>
+            </div>
+        </form>
+        
+        <div class="loginheader">
+            <p>Sign Up to our Website</p>
+        </div>
+
+        <div class="websitefooter">
+            <p>Privacy Policy</p>
+        </div>
+        
+    </main>
+{% endblock %}

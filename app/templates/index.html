@@ -1,8 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+
+    <div class="topnav">
+        <a href="/weather">Weather</a>
+        <a href="/news">News</a>
+        <a href="/scraper">Memes</a>
+        <a style="float:right;color:white;" class="logout" href="/login">Logout</a>
+
+          {% for bar in bar %}
+              <p>
+                <marquee behavior="scroll"direction="left"><b>{{ bar.body }}</b></marquee>
+              </p>
+          {% endfor %}
+    </div>
+    <div class="mid">
+        <img src="{{ url_for('static', filename='images/frontend_backend.jpg') }}" alt="Frontend Backend">
+    </div>
+    <div class="cssfooter">
+        <p>Privacy Policy</p>
+    </div>
+
 {% endblock %}
